@@ -16,9 +16,7 @@ Question: What state are the doors in after the last pass? Which are open, which
 [Source http://rosettacode.org]
 '''
 
-class Door:
-    open = False
-    
+class Door:    
     def __init__(self, *args, **kwargs):
         self.open = False
     
