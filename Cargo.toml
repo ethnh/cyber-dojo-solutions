@@ -1,0 +1,43 @@
+[package]
+name = "cyber-dojo-solutions"
+version = "0.1.0"
+authors = ["Ethan Hindmarsh"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[features]
+strict = [] # Treat warnings as a build error.
+
+[[bin]]
+name = "100doors"           # The name of the target.
+path = "100doors/rust/src/lib.rs"    # The source file of the target.
+test = true            # Is tested by default.
+doctest = true         # Documentation examples are tested by default.
+bench = true           # Is benchmarked by default.
+doc = true             # Is documented by default.
+harness = true         # Use libtest harness.
+edition = "2018"       # The edition of the target.
+
+[[bin]]
+name = "12daysofxmas"           # The name of the target.
+path = "12daysofxmas/rust/src/lib.rs"    # The source file of the target.
+test = true            # Is tested by default.
+doctest = true         # Documentation examples are tested by default.
+bench = true           # Is benchmarked by default.
+doc = true             # Is documented by default.
+harness = true         # Use libtest harness.
+edition = "2018"       # The edition of the target.
+
+[[bin]]
+name = "abcproblem"           # The name of the target.
+path = "abcproblem/rust/src/lib.rs"    # The source file of the target.
+test = true            # Is tested by default.
+doctest = true         # Documentation examples are tested by default.
+bench = true           # Is benchmarked by default.
+doc = true             # Is documented by default.
+harness = true         # Use libtest harness.
+edition = "2018"       # The edition of the target.
+

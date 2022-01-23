@@ -4,5 +4,5 @@ use abc;
 
 #[test]
 fn life_the_universe_and_everything() {
-    assert_eq!(42, abc::answer());
+    assert_eq!(1, abc::answer());
 }
