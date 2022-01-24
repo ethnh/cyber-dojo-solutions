@@ -1,6 +1,5 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-use onehundreddoors;
 
 #[test]
 fn doors_all_false() {

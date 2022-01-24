@@ -1,7 +1,5 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-use christmas;
-
 #[test]
 fn test_initial_strings_is_none() {
     let carol = christmas::Carol::new();
