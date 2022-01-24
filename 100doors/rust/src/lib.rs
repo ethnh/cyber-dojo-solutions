@@ -40,3 +40,4 @@ pub fn walk_through_100_doors() -> bool {
 pub fn main() {
     let _lol = walk_through_100_doors();
 }
+

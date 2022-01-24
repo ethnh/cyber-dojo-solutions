@@ -5,6 +5,11 @@ pub struct Carol {
     day: u8,
     carol: Vec<String>,
 }
+impl Default for Carol {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 
 impl Carol {
     pub fn new() -> Carol {
@@ -45,8 +50,8 @@ impl Carol {
         // Could be useful though
         &self.carol
     }
-    pub fn next_day_of_christmas(&mut self, line: &String) {
-        self.carol.push(line.clone());
+    pub fn next_day_of_christmas(&mut self, line: &str) {
+        self.carol.push(line.to_string());
         self.day += 1;
         if self.day > 12u8 {
             panic!("there aren't 13 days?!");
@@ -57,6 +62,6 @@ impl Carol {
         for line in self.carol.iter().rev() {
             println!("{}", line);
         }
-        println!(""); // line spacing
+        println!(); // line spacing
     }
 }
