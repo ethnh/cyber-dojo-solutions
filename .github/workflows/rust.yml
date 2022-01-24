@@ -14,7 +14,7 @@ defaults:
     shell: bash
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
