@@ -21,4 +21,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
-      run: ROOT="$(pwd); while read in; do cd $in && cargo test --verbose -j 2 --features strict -- --test-threads 2 --nocapture && cd $ROOT; done < .cargo-test-dirs
+      run: ROOT="$(pwd)"; while read in; do cd $in && cargo test --verbose -j 2 --features strict -- --test-threads 2 --nocapture && cd $ROOT; done < .cargo-test-dirs
