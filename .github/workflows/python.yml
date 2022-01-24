@@ -1,4 +1,4 @@
-name: Rust
+name: Python Tests
 
 on:
   push:
