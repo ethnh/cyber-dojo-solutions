@@ -1,6 +1,5 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-
 #[test]
 fn doors_all_false() {
     for door in onehundreddoors::generate_doors() {
