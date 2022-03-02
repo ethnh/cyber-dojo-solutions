@@ -1,7 +1,7 @@
 from doors import *
 
 # not best to import *,
-# TODO: change if ever prod LOL
+# change if ever prod LOL
 
 
 def test_initial_doors():

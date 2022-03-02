@@ -17,24 +17,48 @@ from abcproblem import *
 #   check if word reconstructed successfully
 
 
+def test_fails_if_word_contains_letters_not_in_pairs():
+    assert can_make_word("FART11") == False
+    assert can_make_word("WOWOWO!!!!") == False
+    assert can_make_word("QWERTYo/") == False
+
+
 def test_get_needed_pairs():
+    # This is a low-priority test: Can be deleted if implementation changes and the function is no longer needed.
     #   get_needed_pairs(word) -
     #       find every pair that has a letter in the word
-
-    pass  # TODO: ADD TEST
+    pairs = get_needed_pairs("HUX")
+    assert ("X", "K") in pairs
+    # X from (X, K) would be needed to make the word "HU|X|"
 
 
 def test_sort_by_least_occurring():
-    # def sort_by_least_occurring(word: str) -> list[str]:
-    #   sort by least used letter and remove needed pairs until word is reconstructed
-    assert sort_by_least_occurring("AAABBC") == ["C", "B", "B", "A", "A", "A"]
+    # def sort_by_least_occurring(word: str) -> list[str]: sort by least used letter and remove needed pairs until
+    # word is reconstructed
+    # assert sort_by_least_occurring("AAABBC") == ["C", "B", "B", "A", "A", "A"]
     # assert sort_by_least_occurring("LAMBDA") == ["L", "M", "B", "D", "A", "A"]
-    #   TODO : Sorting may be implemented in a different way, perhaps this test isn't the greatest 🤣
+    # ^ Issue with testing like this: L M B D all occur once, the order in which they appear in the list is irrelevant,
+    # but this test requires it to be ordered like this arbitrarily.
+    # better test: count number of times a letter is in str,
+    # and make sure whatever letters have the lowest count comes before the most
+    word = "LAMBDA"
+    sorted = sort_by_least_occurring(word)
+    # L occurs less than A, L should come before A
+    assert sorted.index("L") < sorted.index("A")
+
+    word = "COMMON"
+    sorted = sort_by_least_occurring(word)
+    # C occurs less than M, C should come before M
+    assert sorted.index("C") < sorted.index("M")
 
 
 def test_reassemble_word():
-    #   check if word reconstructed successfully from pairs
-    pass  # TODO: ADD TEST
+    # check if word reconstructed successfully from pairs
+    #   def reassemble_word(letters_to_use: list[tuple[str]], word_to_make: str) -> str:
+    assert (
+        reassemble_word([("S", "W"), ("R", "A"), ("W", "J"), ("H", "G")], "SWAG")
+        == "SWAG"
+    )
 
 
 def test_can_make_word():
