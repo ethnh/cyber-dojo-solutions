@@ -27,7 +27,7 @@ def test_get_needed_pairs():
     # This is a low-priority test: Can be deleted if implementation changes and the function is no longer needed.
     #   get_needed_pairs(word) -
     #       find every pair that has a letter in the word
-    pairs = get_needed_pairs("HUX")
+    pairs = get_needed_pairs("HUX", letter_pairs_from_readme)
     assert ("X", "K") in pairs
     # X from (X, K) would be needed to make the word "HU|X|"
 
@@ -56,8 +56,8 @@ def test_reassemble_word():
     # check if word reconstructed successfully from pairs
     #   def reassemble_word(letters_to_use: list[tuple[str]], word_to_make: str) -> str:
     assert (
-        reassemble_word([("S", "W"), ("R", "A"), ("W", "J"), ("H", "G")], "SWAG")
-        == "SWAG"
+        can_reassemble_word([("S", "W"), ("R", "A"), ("W", "J"), ("H", "G")], "SWAG")
+        == True
     )
 
 

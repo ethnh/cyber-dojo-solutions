@@ -1,16 +1,8 @@
 #!/bin/python3
 
-# plan:
-# can_make_word(word) -
-#   check for any issues w/ word (optional)
-#   call get_needed_pairs w/ get_needed_pairs
-#   get_needed_pairs(word) -
-#       find every pair that has a letter in the word
-#   sort by least used letter and remove needed pairs until word is reconstructed
-#   check if word reconstructed successfully
-
-
 letter_pairs_from_readme = (
+    # Copied from README.md
+    # Edited to fit the format of the problem
     ("B", "O"),
     ("X", "K"),
     ("D", "Q"),
@@ -70,15 +62,46 @@ def get_needed_pairs(word, letter_pairs) -> list:
     return letter_pairs_needed
 
 
-def reassemble_word(letters_to_use: list[tuple[str]], word_to_make: str) -> str:
-    return ""  # TODO
+def can_reassemble_word(letters_to_use: list[tuple[str]], word_to_make: str) -> bool:
+    # reassemble_word(letters_to_use, word_to_make) -
+    #   for each letter in word_to_make,
+    #   find the corresponding letter in letters_to_use
+    #   remove the letter from letters_to_use
+    #   append the letter to the new word
+
+    # This is of the complexity O(n^2) I believe -
+    # Very complex double-for loop, but at this size, it's not a big deal
+    word_to_make = "".join(sort_by_least_occurring(word_to_make))
+    for letter in word_to_make:
+        for pair in letters_to_use:
+            if letter in pair:
+                # replace with placeholder to indicate removed
+                #  if word_to_make.remove is used, it would mess up for loop
+                word_to_make = word_to_make.replace(letter, ".", 1)
+                letters_to_use.remove(pair)
+                break
+    # remove placeholder letters
+    word_to_make = word_to_make.replace(".", "")
+    if len(word_to_make) == 0:
+        return True
+
+    return False
 
 
 def can_make_word(word: str) -> bool:
+    if len(word) == 0:
+        return True
+    # can_make_word(word) -
+    #   check for any issues w/ word (optional)
+    #   call get_needed_pairs w/ get_needed_pairs
+    #   get_needed_pairs(word) -
+    #       find every pair that has a letter in the word
+    #   sort by least used letter and remove needed pairs until word is reconstructed
+    #   check if word reconstructed successfully
     word = word.upper()
     for letter in word:
         if letter not in all_letters_available:
             return False
-    reconstructed = ""
-    # TODO
-    return reconstructed == word
+
+    needed_pairs = get_needed_pairs(word, letter_pairs_from_readme)
+    return can_reassemble_word(needed_pairs, word)
