@@ -1,0 +1,2 @@
+[workspace]
+members = ["./100doors/rust", "./abcproblem/rust", "./12daysofxmas/rust"]
