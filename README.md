@@ -1,5 +1,7 @@
-[![Rust Tests](https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/rust.yml/badge.svg)](https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/rust.yml)
-[![Python Tests](https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/python.yml/badge.svg)](https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/python.yml)
+<div align="center">
+  <img src="https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/rust.yml/badge.svg" alt="Rust Tests" />
+  <img src="https://github.com/EthanHindmarsh/cyber-dojo-solutions/actions/workflows/python.yml/badge.svg" alt="Python Tests" />
+</div>
 
 # My Cyber-Dojo.org Solutions📕
 Solving problems from Cyber-Dojo.org 😁
