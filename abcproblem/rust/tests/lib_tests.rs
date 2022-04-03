@@ -22,11 +22,11 @@ use abc::*;
 #[test]
 fn test_can_make_word() {
     // Test that the library is able to actually solve the abc problem
-    assert_eq!(can_make_word("A"), true);
-    assert_eq!(can_make_word("BARK"), true);
-    assert_eq!(can_make_word("BOOK"), false);
-    assert_eq!(can_make_word("TREAT"), true);
-    assert_eq!(can_make_word("COMMON"), false);
-    assert_eq!(can_make_word("SQUAD"), true);
-    assert_eq!(can_make_word("CONFUSE"), true);
+    assert!(can_make_word("A"));
+    assert!(can_make_word("BARK"));
+    assert!(!can_make_word("BOOK"));
+    assert!(can_make_word("TREAT"));
+    assert!(!can_make_word("COMMON"));
+    assert!(can_make_word("SQUAD"));
+    assert!(can_make_word("CONFUSE"));
 }
